@@ -1,0 +1,24 @@
+$header-height: 75px;
+$num-of-demos: 4;
+
+
+#header {
+	position: relative;
+	height: $header-height;
+	background: $white;
+
+	#logo {
+		position: absolute;
+		left: 16px;
+		height: $header-height;
+		text-decoration: none;
+
+		h2 {
+			color: $darkgray;
+			font-weight: 700;
+			font-size: 36px;
+			line-height: $header-height;
+		}
+	}
+
+}

@@ -1,0 +1,10 @@
+.storylist {
+    list-style: none;
+    padding: 0;
+
+    &__item {
+        margin-bottom: .5em;
+        padding: 1em;
+    }
+
+}

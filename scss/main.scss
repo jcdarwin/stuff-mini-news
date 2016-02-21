@@ -1,0 +1,50 @@
+/*
+** Settingsa
+ */
+@import './variables.scss';
+
+/*
+** Tools
+ */
+
+/*
+** Generics
+ */
+@import './normalize.scss';
+
+/*
+** Objects
+ */
+@import './header.scss';
+@import './home.scss';
+@import './storylist.scss';
+
+/*
+** Components
+ */
+@import './card.scss';
+@import './toggle.scss';
+
+/*
+** Trumps
+ */
+
+*, *:before, *:after { box-sizing: border-box; }
+
+html, body, input, button, select, option {
+	color: $darkgray;
+	font-family: $font-family-primary, sans-serif;
+}
+
+html, body, #render-target {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: $aqua;
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
