@@ -3,6 +3,7 @@ import fetch                            from 'cjs-fetch';
 import moment                           from 'moment';
 import classNames                       from 'classnames';
 
+import Settings                         from './Settings.jsx';
 import StoryList                        from './StoryList.jsx';
 
 
@@ -12,7 +13,11 @@ class Home extends Component {
 
     this.state = {
       data: {
-        stories: []
+        stories: [],
+        popular: {
+          shared: [],
+          viewed: []
+        }
       }
     }
 
@@ -46,7 +51,17 @@ class Home extends Component {
 					<p>Welcome to the Stuff News Sorter</p>
 				</section>
 
-				<StoryList stories={this.state.data.stories} />
+{/*
+				<Settings
+						filterPreset={'stories'}
+				/>
+*/}
+
+				<StoryList
+						stories={this.state.data.stories}
+						shared={this.state.data.popular.shared}
+						viewed={this.state.data.popular.viewed}
+				/>
 
 			</div>
 		);

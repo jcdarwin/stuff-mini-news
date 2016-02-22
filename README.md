@@ -4,3 +4,4 @@ A React app based on [react-flip-move](http://joshwcomeau.github.io/react-flip-m
 that uses [FLIP animations](https://aerotwist.com/blog/flip-your-animations/)
 in order to animate the rendering of data on the page.
 
+https://medium.com/developers-writing/animating-the-unanimatable-1346a5aab3cd#.pa4ibgu5h

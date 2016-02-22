@@ -6,15 +6,15 @@ import Toggle                           from './Toggle.jsx';
 import StoryListItem                    from './StoryListItem.jsx';
 
 
-const sortAsc   = (a, b) => a.datetime_iso8601 > b.datetime_iso8601;
-const sortDesc  = (a, b) => a.datetime_iso8601 < b.datetime_iso8601;
+const sortAsc   = (a, b) => a.datetime_unix - b.datetime_unix;
+const sortDesc  = (a, b) => b.datetime_unix - a.datetime_unix;
 
 class StoryList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       view: 'list',
-      order: 'asc',
+      order: 'desc',
       sortingMethod: 'chronological',
       stories: props.stories
     };
@@ -33,7 +33,15 @@ class StoryList extends Component {
   }
 
   componentDidMount() {
-    this.toggleSort();
+    //this.toggleSort();
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState({
+    	stories: props.stories.sort(
+        this.state.order === 'asc' ? sortAsc : sortDesc
+      )
+    });
   }
 
   renderStories() {
@@ -56,6 +64,18 @@ class StoryList extends Component {
                   <Toggle
                     clickHandler={this.toggleSort}
                     text={this.state.order === 'asc' ? 'Earliest' : 'Latest'}
+                    icon={this.state.order === 'asc' ? 'angle-up' : 'angle-down'}
+                    active={this.state.sortingMethod === 'chronological'}
+                  />
+                  <Toggle
+                    clickHandler={this.toggleSort}
+                    text={'Viewed'}
+                    icon={this.state.order === 'asc' ? 'angle-up' : 'angle-down'}
+                    active={this.state.sortingMethod === 'chronological'}
+                  />
+                  <Toggle
+                    clickHandler={this.toggleSort}
+                    text={'Shared'}
                     icon={this.state.order === 'asc' ? 'angle-up' : 'angle-down'}
                     active={this.state.sortingMethod === 'chronological'}
                   />
