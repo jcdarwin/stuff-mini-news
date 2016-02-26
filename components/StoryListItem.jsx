@@ -11,8 +11,6 @@ class StoryListItem extends Component {
       <li id={this.props.id} className={storyListClass}>
         <h3><a className="card__link" href={this.props.url}>{this.props.title}</a></h3>
         <h5>{moment(this.props.datetime_iso8601).format('hh:mm a MMM Do, YYYY')}</h5>
-        <h5>{this.props.datetime_iso8601}</h5>
-        <h5>{this.props.datetime_unix}</h5>
       </li>
     );
   }

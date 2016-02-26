@@ -1,24 +1,21 @@
-$header-height: 75px;
-$num-of-demos: 4;
-
-
 #header {
 	position: relative;
-	height: $header-height;
-	background: $white;
+	background: $lightbeige;
+	width: 100%;
+	max-width: 550px;
+	padding: 10px;
+	margin: 0 auto;
+	text-align: center;
 
-	#logo {
-		position: absolute;
-		left: 16px;
-		height: $header-height;
-		text-decoration: none;
-
-		h2 {
-			color: $darkgray;
-			font-weight: 700;
-			font-size: 36px;
-			line-height: $header-height;
-		}
+	h1, h2 {
+		font-weight: 700;
+	}
+	h1 {
+		color: $darkgray;
+		font-size: 36px;
+	}
+	h2 {
+		color: $darkgreen;
 	}
 
 }

@@ -2,20 +2,22 @@
   position: relative;
   display: inline-block;
   border: 0;
-  border-radius: 6px;
-  border-bottom: 3px solid rgba(0,0,0,0.3);
-  background: $mauve;
+  border-radius: 20px;
+//  border-bottom: 3px solid rgba(0,0,0,0.3);
+  background: $lightbeige;
   color: $white;
   margin: 0 5px;
-  padding: 8px 20px 8px 43px;
+  padding: 20px;
   font-size: 12px;
   outline: none;
   text-decoration: none;
+  cursor: pointer;
 
   i {
     position: absolute;
-    left: 10px;
-    font-size: 16px;
+    left: 3px;
+    top: 8px;
+    font-size: 28px;
   }
 
   &:active {

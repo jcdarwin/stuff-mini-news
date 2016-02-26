@@ -1,7 +1,7 @@
 #home {
 	width: 100%;
 	max-width: 550px;
-	margin: 2rem auto;
+	margin: .5rem auto;
 	color: $white;
 
 	header {
@@ -14,10 +14,10 @@
 		font-size: 60px;
 		font-weight: 500;
 		text-shadow:
-			0.5px 0.5px 0 darken($aqua, 10%),
-			1px 1px 0 darken($aqua, 10%),
-			1.5px 1.5px 0 darken($aqua, 10%),
-			2px 2px 0 darken($aqua, 10%)
+			0.5px 0.5px 0 darken($green, 10%),
+			1px 1px 0 darken($green, 10%),
+			1.5px 1.5px 0 darken($green, 10%),
+			2px 2px 0 darken($green, 10%)
 		;
 
 
@@ -29,8 +29,8 @@
 			right: 5px;
 			top: 0;
 			text-shadow:
-				0.5px 0.5px 0 darken($aqua, 10%),
-				1px 1px 0 darken($aqua, 10%)
+				0.5px 0.5px 0 darken($green, 10%),
+				1px 1px 0 darken($green, 10%)
 			;
 		}
 
@@ -54,7 +54,7 @@
 		font-weight: 300;
 
 		a {
-			color: $lightgray;
+			color: $lightbeige;
 			font-weight: 500;
 			text-decoration: none;
 		}

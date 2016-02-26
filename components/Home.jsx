@@ -2,8 +2,10 @@ import React, { Component, PropTypes }  from 'react';
 import fetch                            from 'cjs-fetch';
 import moment                           from 'moment';
 import classNames                       from 'classnames';
+import Tabs                             from 'react-simpletabs';
 
-import Settings                         from './Settings.jsx';
+import '../node_modules/react-simpletabs/dist/react-simpletabs.min.css';
+
 import StoryList                        from './StoryList.jsx';
 
 
@@ -21,8 +23,6 @@ class Home extends Component {
       }
     }
 
-    this.fetchData = this.fetchData.bind(this)
-
   }
 
   fetchData(json) {
@@ -31,41 +31,43 @@ class Home extends Component {
 
   componentDidMount() {
 
-    fetch('http://localhost:9000/')
+    fetch('http://localhost:9000/?limit=10')
       .then(function(response) {
         console.log('json fetched')
         return response.json()
       })
-      .then(this.fetchData)
+      .then(this.fetchData.bind(this))
       .catch(function(ex) {
         console.error('json parsing failed', ex)
       })
 
   }
 
-	render() {
-		return (
-			<div id="home">
+  render() {
+    return (
+      <div id="home">
 
-				<section>
-					<p>Welcome to the Stuff News Sorter</p>
-				</section>
+        <Tabs>
+          <Tabs.Panel title='Recent'>
+            <StoryList
+                stories={this.state.data.stories}
+            />
+          </Tabs.Panel>
+          <Tabs.Panel title='Viewed'>
+            <StoryList
+                stories={this.state.data.popular.shared}
+            />
+          </Tabs.Panel>
+          <Tabs.Panel title='Shared'>
+            <StoryList
+                stories={this.state.data.popular.viewed}
+            />
+          </Tabs.Panel>
+        </Tabs>
 
-{/*
-				<Settings
-						filterPreset={'stories'}
-				/>
-*/}
-
-				<StoryList
-						stories={this.state.data.stories}
-						shared={this.state.data.popular.shared}
-						viewed={this.state.data.popular.viewed}
-				/>
-
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 };
 
 export default Home;

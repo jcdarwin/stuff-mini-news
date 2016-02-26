@@ -23,6 +23,7 @@
 ** Components
  */
 @import './card.scss';
+@import './tabs.scss';
 @import './toggle.scss';
 
 /*
@@ -40,7 +41,7 @@ html, body, #render-target {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: $aqua;
+	background: $green;
 	overflow-x: hidden;
 }
 

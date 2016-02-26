@@ -2,23 +2,28 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-	devtool: 'cheap-module-eval-source-map',
-
 	entry: [
-		'webpack-hot-middleware/client',
 		'./index.js'
 	],
 
 	output: {
 		path: __dirname,
 		publicPath: '/stuff-news-sorter/',
-		filename: 'dist/bundle.js',
-		sourceMapFilename: 'dist/bundle.map'
+		filename: 'dist/bundle.js'
 	},
 
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.NoErrorsPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('production')
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				screw_ie8: true,
+				warnings: false
+			}
+		})
 	],
 
 	module: {
@@ -27,7 +32,8 @@ module.exports = {
 			{
 				test:     /\.jsx?$/,
 				loader:   'babel',
-				exclude:  /node_modules/
+				exclude:  /node_modules/,
+				include:  __dirname
 			},
 			// SASS
 			{

@@ -9,9 +9,8 @@ class Header extends Component {
 	render() {
 		return (
 			<header id="header">
-				<Link to="/" id="logo">
-					<h2>Stuff News Sorter</h2>
-				</Link>
+				<h1>Stuff Mini News</h1>
+				<h2>The latest headlines, delivered quickly</h2>
 			</header>
 		);
 	}
