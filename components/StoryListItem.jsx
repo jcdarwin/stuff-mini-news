@@ -4,13 +4,17 @@ import classNames                       from 'classnames';
 
 import Toggle                           from './Toggle.jsx';
 
+const IMAGE_LAYOUT = 'Standard Image';
+const IMAGE_WIDTH  = 620;
+const MAX_HEIGHT   = '560px';
+
 class StoryListItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            view: 'list',
-            opened: false,
-            stories: props.stories,
+            view     : 'list',
+            opened   : false,
+            stories  : props.stories,
             maxHeight: 0
         };
     }
@@ -21,7 +25,7 @@ class StoryListItem extends Component {
             posVariant
         pos = this.props.images.findIndex(function(image){
             posVariant = image.variants.findIndex(function(variant){
-                return variant.layout == 'Standard Image' && variant.width == "620"
+                return variant.layout == IMAGE_LAYOUT && parseInt(variant.width) == IMAGE_WIDTH
             })
             return posVariant !== -1
         })
@@ -30,13 +34,13 @@ class StoryListItem extends Component {
 
         this.setState({
             opened   : (this.state.opened ? false : true),
-            maxHeight: (this.state.opened ? 0 : '560px'),
+            maxHeight: (this.state.opened ? 0 : MAX_HEIGHT),
             opacity  : (this.state.opened ? 0 : 1),
             thumbnail: (this.state.opened ? '' : thumbnail),
         });
     }
 
-    renderToggle() {
+    renderCard() {
         return (
             <div className="card__intro">
                 <Toggle
@@ -68,7 +72,7 @@ class StoryListItem extends Component {
             <li id={this.props.id} className={storyListClass}>
                 <h3><a className="card__link" href={this.props.urlHtml}>{this.props.title}</a></h3>
                 <h5>{moment(this.props.datetime_iso8601).format('hh:mm a MMM Do, YYYY')}</h5>
-                {this.props.intro ? this.renderToggle() : ''}
+                {this.props.intro ? this.renderCard() : ''}
             </li>
         );
     }
