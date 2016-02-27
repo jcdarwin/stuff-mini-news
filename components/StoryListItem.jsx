@@ -30,7 +30,7 @@ class StoryListItem extends Component {
 
     this.setState({
       opened: (this.state.opened ? false : true),
-      maxHeight: (this.state.opened ? 0 : '300px'),
+      maxHeight: (this.state.opened ? 0 : '560px'),
       opacity: (this.state.opened ? 0 : 1),
       thumbnail: (this.state.opened ? '' : thumbnail),
     });
