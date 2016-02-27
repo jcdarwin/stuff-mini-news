@@ -5,9 +5,8 @@
   "description": "The latest headlines, delivered quickly",
   "scripts": {
     "start": "node server.js",
-    "clean": "rm -rf www && mkdir -p www/js",
-		"copy": "cp index.html www",
-		"prebuild": "npm run clean && npm run copy",
+    "clean": "rm -rf dist && mkdir -p dist/js",
+    "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production webpack index.js --config webpack.config.production.js"
   },
   "license": "MIT",

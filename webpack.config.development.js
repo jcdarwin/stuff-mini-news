@@ -12,8 +12,8 @@ module.exports = {
 	output: {
 		path: __dirname,
 		publicPath: '/',
-		filename: 'www/js/bundle.js',
-		sourceMapFilename: 'www/js/bundle.map'
+		filename: 'dist/js/bundle.js',
+		sourceMapFilename: 'dist/js/bundle.map'
 	},
 
 	externals: {
@@ -27,7 +27,7 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor",
-			filename: "www/js/vendor.bundle.js",
+			filename: "dist/js/vendor.bundle.js",
 			minChunks: function (module, count) {
 			   return module.resource && module.resource.indexOf('node_modules') !== -1;
 			}
