@@ -1,7 +1,6 @@
 {
   "name": "stuff-mini-news",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "description": "The latest headlines, delivered quickly",
   "scripts": {
     "start": "node server.js",

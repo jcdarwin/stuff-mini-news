@@ -18,8 +18,6 @@ class StoryList extends Component {
       sortingMethod: 'chronological',
       stories: props.stories
     };
-
-    this.toggleSort = this.toggleSort.bind(this);
   }
 
   toggleSort() {
@@ -63,9 +61,10 @@ class StoryList extends Component {
               <header>
                   <Toggle
                     text={this.state.order === 'asc' ? 'Latest' : 'Earliest'}
-                    clickHandler={this.toggleSort}
+                    clickHandler={this.toggleSort.bind(this)}
                     icon={this.state.order === 'asc' ? 'angle-up' : 'angle-down'}
                     active={this.state.sortingMethod === 'chronological'}
+                    size={'large'}
                   />
               </header>
               <ul className="storylist">

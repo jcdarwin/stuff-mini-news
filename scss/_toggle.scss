@@ -25,32 +25,8 @@
     border-bottom: 1px solid rgba(0,0,0,0.5);
   }
 
-  &.active {
-    background: $fuscia;
-  }
-
-  &.large {
-    font-size: 14px;
-    padding: 12px 24px 12px 50px;
-
-    i { font-size: 18px; }
-  }
-
   &.no-icon {
     padding: 8px 20px;
-  }
-
-  &.icon-right {
-    padding: 8px 43px 8px 20px;
-
-    &.large {
-      padding: 12px 50px 12px 24px;
-    }
-
-    i {
-      left: auto;
-      right: 10px;
-    }
   }
 
   &__icon {
@@ -62,20 +38,47 @@
     line-height: 1;
   }
 
-  & .button-toggle__icon--angle-up {
-    top: 8px;
+  &__icon--large {
+      padding: 20px;
+      background: $fuscia;
 
-    &:before {
-      content: "\25b2";
-    }
+      i {
+          left: 10px;
+      }
+
+      & .button-toggle__icon--angle-up {
+          top: 8px;
+      }
+
+      & .button-toggle__icon--angle-down {
+          top: 12px;
+      }
   }
 
-  & .button-toggle__icon--angle-down {
-    top: 12px;
+  &__icon--small {
+      padding: 14px;
+      background: $blue;
 
-    &:before {
+      i {
+          font-size: 14px;
+          left: 7px;
+      }
+
+      & .button-toggle__icon--angle-up {
+            top: 6px;
+      }
+
+      & .button-toggle__icon--angle-down {
+          top: 8px;
+      }
+  }
+
+  & .button-toggle__icon--angle-up::before {
+      content: "\25b2";
+  }
+
+  & .button-toggle__icon--angle-down:before {
       content: "\25bc";
-    }
   }
 
 }

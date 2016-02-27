@@ -8,4 +8,24 @@
         text-decoration: none;
         color: $fuscia;
     }
+
+    &__intro {
+        text-align: center;
+        margin-top: .75rem;
+    }
+
+    &__intro-text {
+        margin-top: .75rem;
+        text-align: left;
+        transition: all 300ms ease-out;
+        transition-property: max-height, opacity;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    &__intro-more {
+        margin-bottom: 0;
+        text-align: center;
+    }
 }
