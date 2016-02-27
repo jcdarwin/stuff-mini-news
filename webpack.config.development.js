@@ -11,12 +11,27 @@ module.exports = {
 
 	output: {
 		path: __dirname,
-		publicPath: '/stuff-news-sorter/',
-		filename: 'dist/bundle.js',
-		sourceMapFilename: 'dist/bundle.map'
+		publicPath: '/',
+		filename: 'www/js/bundle.js',
+		sourceMapFilename: 'www/js/bundle.map'
 	},
 
+	externals: {
+		'react': 'React',
+		'react-dom': 'ReactDOM',
+		'moment': 'moment'
+	},
+
+	devtool: 'eval',
+
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: "vendor",
+			filename: "www/js/vendor.bundle.js",
+			minChunks: function (module, count) {
+			   return module.resource && module.resource.indexOf('node_modules') !== -1;
+			}
+		}),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	],
@@ -28,6 +43,11 @@ module.exports = {
 				test:     /\.jsx?$/,
 				loader:   'babel',
 				exclude:  /node_modules/
+			},
+			// JSON
+			{
+				test: /\.json$/,
+				loader: 'json'
 			},
 			// SASS
 			{

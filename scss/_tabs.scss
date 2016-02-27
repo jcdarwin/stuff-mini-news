@@ -1,28 +1,43 @@
+/*!
+ *  Inspired by React Simpletabs:
+ *  https://github.com/pedronauck/react-simpletabs
+ *
+ */
+
 .tabs {
 	background-color: $lightbeige;
 }
 
 .tabs-menu {
+	display: table;
+	list-style: none;
+	padding: 0;
 	margin: auto;
 }
 
 .tabs-menu-item {
 
+	float: left;
 	margin-right: auto;
 
-	&.is-active {
-		border-bottom: 2px solid $blue;
-
-		a {
-			color: $blue;
-		}
-	}
-
 	a {
+		cursor: pointer;
+		display: block;
+		color: #A9A9A9;
 		transition: all 300ms ease-out;
 		transition-property: background-color, color, opacity;
 		padding: 6px 19px;
 	}
+
+	&.is-active {
+		border-bottom: 2px solid $blue;
+	}
+
+	&:not(.is-active) a:hover,
+	&.is-active a {
+		color: $blue;
+	}
+
 }
 
 .tabs-navigation {

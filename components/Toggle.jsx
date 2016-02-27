@@ -8,12 +8,11 @@ const Toggle = ({clickHandler, text, icon, active, large}) => {
 		active,
 		large,
 	});
-	const iconClass = `fa fa-fw fa-${icon}`;
+	const iconClass = `button-toggle__icon button-toggle__icon--${icon}`;
 
 	return (
-		<button className={buttonClass} onClick={clickHandler}>
+		<button className={buttonClass} onClick={clickHandler} title={text}>
 			<i className={iconClass} />
-			{text}
 		</button>
 	);
 };

@@ -62,6 +62,7 @@ class StoryList extends Component {
           <div className={this.state.view}>
               <header>
                   <Toggle
+                    text={this.state.order === 'asc' ? 'Latest' : 'Earliest'}
                     clickHandler={this.toggleSort}
                     icon={this.state.order === 'asc' ? 'angle-up' : 'angle-down'}
                     active={this.state.sortingMethod === 'chronological'}

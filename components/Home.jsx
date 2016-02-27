@@ -1,13 +1,17 @@
 import React, { Component, PropTypes }  from 'react';
 import fetch                            from 'cjs-fetch';
-import moment                           from 'moment';
 import classNames                       from 'classnames';
-import Tabs                             from 'react-simpletabs';
 
-import '../node_modules/react-simpletabs/dist/react-simpletabs.min.css';
-
+import config                           from '../config.json';
+import Tabs                             from './Simpletabs.jsx';
 import StoryList                        from './StoryList.jsx';
 
+var url;
+if (process.env.NODE_ENV === 'production') {
+	url = config.production.url;
+} else {
+	url = config.development.url;
+}
 
 class Home extends Component {
   constructor(props) {
@@ -31,7 +35,7 @@ class Home extends Component {
 
   componentDidMount() {
 
-    fetch('http://localhost:9000/?limit=10')
+    fetch(url)
       .then(function(response) {
         console.log('json fetched')
         return response.json()

@@ -15,9 +15,9 @@
 
   i {
     position: absolute;
-    left: 3px;
-    top: 8px;
-    font-size: 28px;
+    left: 10px;
+    top: 12px;
+    font-size: 22px;
   }
 
   &:active {
@@ -52,4 +52,30 @@
       right: 10px;
     }
   }
+
+  &__icon {
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 1;
+  }
+
+  & .button-toggle__icon--angle-up {
+    top: 8px;
+
+    &:before {
+      content: "\25b2";
+    }
+  }
+
+  & .button-toggle__icon--angle-down {
+    top: 12px;
+
+    &:before {
+      content: "\25bc";
+    }
+  }
+
 }
