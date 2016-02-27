@@ -15,9 +15,10 @@
 
   i {
     position: absolute;
-    left: 10px;
-    top: 12px;
+    left: calc(50% - 11px);
+    top: 50%;
     font-size: 22px;
+    line-height: 0;
   }
 
   &:active {
@@ -43,16 +44,9 @@
       background: $fuscia;
 
       i {
-          left: 10px;
+          left: calc(50% - 11px);
       }
 
-      & .button-toggle__icon--angle-up {
-          top: 8px;
-      }
-
-      & .button-toggle__icon--angle-down {
-          top: 12px;
-      }
   }
 
   &__icon--small {
@@ -61,16 +55,9 @@
 
       i {
           font-size: 14px;
-          left: 7px;
+          left: calc(50% - 7px);
       }
 
-      & .button-toggle__icon--angle-up {
-            top: 6px;
-      }
-
-      & .button-toggle__icon--angle-down {
-          top: 8px;
-      }
   }
 
   & .button-toggle__icon--angle-up::before {
