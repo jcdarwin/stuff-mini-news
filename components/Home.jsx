@@ -37,7 +37,6 @@ class Home extends Component {
 
     fetch(url)
       .then(function(response) {
-        console.log('json fetched')
         return response.json()
       })
       .then(this.fetchData.bind(this))
