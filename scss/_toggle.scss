@@ -1,86 +1,86 @@
 .button-toggle {
-  position: relative;
-  display: inline-block;
-  border: 0;
-  color: $white;
-  margin: 0 5px;
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border: 0;
+    color: $white;
+    margin: 0 5px;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
 
-  i {
-    position: absolute;
-    top: 50%;
-    line-height: 0;
-  }
+    i {
+        position: absolute;
+        top: 50%;
+        line-height: 0;
+    }
 
-  &:active {
-    top: 2px;
-    border-bottom: 1px solid rgba(0,0,0,0.5);
-  }
+    &:active {
+        top: 2px;
+        border-bottom: 1px solid rgba(0,0,0,0.5);
+    }
 
-  &__icon {
-    text-align: center;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    font-stretch: normal;
-    line-height: 1;
-  }
+    &__icon {
+        text-align: center;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 1;
+    }
 
-  &__icon--large {
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      background: $fuscia;
-      font-size: 1rem;
+    &__icon--large {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+        background: $fuscia;
+        font-size: 1rem;
 
-      i {
-			    border-top: 1.125em solid transparent;
-			    border-right: 0.3125em solid $white;
-			    border-left: 1.125em solid transparent;
-			    border-bottom: 0.3125em solid $white;
-			    top: 0;
+        i {
+                border-top: 1.125em solid transparent;
+                border-right: 0.3125em solid $white;
+                border-left: 1.125em solid transparent;
+                border-bottom: 0.3125em solid $white;
+                top: 0;
 
-          left: calc(50% - 0.6875em);
+                left: calc(50% - 0.6875em);
 
-				  &.button-toggle__icon--angle-up {
-					    top: calc(50% - .125em);
-				      transform: rotate(-135deg);
-				  }
+                &.button-toggle__icon--angle-up {
+                        top: calc(50% - .125em);
+                        transform: rotate(-135deg);
+                }
 
-				  &.button-toggle__icon--angle-down {
-					    top: calc(50% - 1.25em);
-				      transform: rotate(45deg);
-				  }
-      }
+                &.button-toggle__icon--angle-down {
+                        top: calc(50% - 1.25em);
+                        transform: rotate(45deg);
+                }
+        }
 
-  }
+    }
 
-  &__icon--small {
-      padding: .875rem;
-      border-radius: .875rem;
-      background: $blue;
-      font-size: .8125rem;
+    &__icon--small {
+        padding: .875rem;
+        border-radius: .875rem;
+        background: $blue;
+        font-size: .8125rem;
 
-      i {
-			    border-top: .3125em solid $white;
-			    border-right: .3125em solid $white;
-			    border-left: 1.125em solid transparent;
-			    border-bottom: 1.125em solid transparent;
-          left: calc(50% - .575rem);
+        i {
+            border-top: .3125em solid $white;
+            border-right: .3125em solid $white;
+            border-left: 1.125em solid transparent;
+            border-bottom: 1.125em solid transparent;
+            left: calc(50% - .575rem);
 
-				  &.button-toggle__icon--angle-up {
-					    top: calc(50% - .125em);
-				      transform: rotate(-45deg);
-				  }
+            &.button-toggle__icon--angle-up {
+                    top: calc(50% - .125em);
+                    transform: rotate(-45deg);
+            }
 
-				  &.button-toggle__icon--angle-down {
-					    top: calc(50% - 1.25em);
-				      transform: rotate(135deg);
-				  }
+            &.button-toggle__icon--angle-down {
+                    top: calc(50% - 1.25em);
+                    transform: rotate(135deg);
+            }
 
-      }
+        }
 
-  }
+    }
 
 }

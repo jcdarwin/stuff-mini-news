@@ -1,8 +1,8 @@
 {
-	"development": {
-		"url": "http://localhost:9000/?limit=10"
-	},
-	"production": {
-		"url": "http://stuff-augmented-json.dokku.mebooks.co.nz/?limit=10"
-	}
+    "development": {
+        "url": "http://localhost:9000/?limit=10"
+    },
+    "production": {
+        "url": "http://stuff-augmented-json.dokku.mebooks.co.nz/?limit=10"
+    }
 }

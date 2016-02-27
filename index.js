@@ -10,27 +10,29 @@ require('./scss/main.scss');
 
 
 class App extends Component {
-	currentPath() { return this.props.location.pathname.replace(/^\//, '') }
+    currentPath() { return this.props.location.pathname.replace(/^\//, '') }
 
-	renderHeader() {
-		return <Header path={this.currentPath()} />
-	}
-	render() {
-		return (
-			<div className="app">
-				{ this.renderHeader() }
-        <section id="main-content">
-          { this.props.children }
-        </section>
-			</div>
-		);
-	}
+    renderHeader() {
+        return <Header path={this.currentPath()} />
+    }
+
+    render() {
+        return (
+            <div className="app">
+                { this.renderHeader() }
+                <section id="main-content">
+                    { this.props.children }
+                </section>
+            </div>
+        );
+    }
+
 };
 
 render((
-	<Router>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home}/>
-		</Route>
-	</Router>
+    <Router>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home}/>
+        </Route>
+    </Router>
 ), document.getElementById('render-target'))

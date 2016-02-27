@@ -8,69 +8,67 @@ import StoryList                        from './StoryList.jsx';
 
 var url;
 if (process.env.NODE_ENV === 'production') {
-	url = config.production.url;
+    url = config.production.url;
 } else {
-	url = config.development.url;
+    url = config.development.url;
 }
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
 
-    this.state = {
-      data: {
-        stories: [],
-        popular: {
-          shared: [],
-          viewed: []
+        this.state = {
+            data: {
+                stories: [],
+                popular: {
+                    shared: [],
+                    viewed: []
+                }
+            }
         }
-      }
+
     }
 
-  }
+    fetchData(json) {
+        this.setState({data: json})
+    }
 
-  fetchData(json) {
-      this.setState({data: json})
-  }
+    componentDidMount() {
+        fetch(url)
+            .then(function(response) {
+                return response.json()
+            })
+            .then(this.fetchData.bind(this))
+            .catch(function(ex) {
+                console.error('json parsing failed', ex)
+            })
+    }
 
-  componentDidMount() {
+    render() {
+        return (
+            <div id="home">
 
-    fetch(url)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(this.fetchData.bind(this))
-      .catch(function(ex) {
-        console.error('json parsing failed', ex)
-      })
+                <Tabs>
+                    <Tabs.Panel title='Recent'>
+                        <StoryList
+                                stories={this.state.data.stories}
+                        />
+                    </Tabs.Panel>
+                    <Tabs.Panel title='Viewed'>
+                        <StoryList
+                                stories={this.state.data.popular.shared}
+                        />
+                    </Tabs.Panel>
+                    <Tabs.Panel title='Shared'>
+                        <StoryList
+                                stories={this.state.data.popular.viewed}
+                        />
+                    </Tabs.Panel>
+                </Tabs>
 
-  }
-
-  render() {
-    return (
-      <div id="home">
-
-        <Tabs>
-          <Tabs.Panel title='Recent'>
-            <StoryList
-                stories={this.state.data.stories}
-            />
-          </Tabs.Panel>
-          <Tabs.Panel title='Viewed'>
-            <StoryList
-                stories={this.state.data.popular.shared}
-            />
-          </Tabs.Panel>
-          <Tabs.Panel title='Shared'>
-            <StoryList
-                stories={this.state.data.popular.viewed}
-            />
-          </Tabs.Panel>
-        </Tabs>
-
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 };
 
 export default Home;
