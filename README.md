@@ -59,7 +59,7 @@ root directory -- we suggest [http-server](https://www.npmjs.com/package/http-se
 We use [dokku](http://dokku.viewdocs.io/dokku/), so, presuming our dokku server
 is to be found at http://dokku.me, deployment is as easy as:
 
-	git remote add dokku dokku@dokku.me:stuff-mini-new
+	git remote add dokku dokku@dokku.me:stuff-mini-news
 
 	git push dokku master
 
