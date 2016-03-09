@@ -63,8 +63,9 @@ is to be found at http://dokku.me, deployment is as easy as:
 
 	git push dokku master
 
-When the post-receive hook runs on our dokku server, it will find [Florian Heinemann's custom
-buildpack](https://www.florianheinemann.com/github/dokku/2014/11/17/Hosting-static-pages-on-Dokku.html) in the `.env` file that we use to deploy a static site.
+We previously used [Florian Heinemann's custom
+buildpack](https://www.florianheinemann.com/github/dokku/2014/11/17/Hosting-static-pages-on-Dokku.html), specified in the `.env` file, to deploy a static site.
+However, Dokku now has this built in.
 
 When deployed to our dokku server, the presence of the `.static` file is enough to
 trigger the buildpack to treat our app as a static site.
